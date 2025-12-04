@@ -1,0 +1,15 @@
+{
+  "name": "Hipogrifo Seguro",
+  "short_name": "Hipogrifo",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0B4D2B",
+  "theme_color": "#0B4D2B",
+  "icons": [
+    {
+      "src": "logo_fundo_escuro.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ]
+}

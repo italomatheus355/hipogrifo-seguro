@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hipogrifo Seguro - Identificação</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="app.css" />
+  <meta name="theme-color" content="#0B4D2B">
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <img src="logo_fundo_escuro.png" alt="Logo HU-41 Hipogrifo" class="logo"/>
+      <div class="header-text">
+        <h1 class="app-name">Hipogrifo Seguro</h1>
+        <div class="dept" style="font-size: 13px; font-weight: 500; text-transform: none; color: #333;">
+          Identificou alguma situação insegura? Faça o RelPrev.<br>
+          Checklist fator humano pós-manutenção
+        </div>
+      </div>
+    </header>
+
+    <section id="form-area">
+      <form id="ident-form" class="card">
+        <h2>Identificação</h2>
+        <label>Nome
+          <input type="text" id="nome" required />
+        </label>
+        <label>Graduação
+          <input type="text" id="graduacao" required />
+        </label>
+        <label>E-mail
+          <input type="email" id="email" required value=""/>
+        </label>
+        <button type="submit" class="btn">Continuar</button>
+      </form>
+
+      <div id="footer-note" class="footer">
+        Centro de Processamento de Dados
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

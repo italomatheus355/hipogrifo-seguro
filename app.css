@@ -1,0 +1,30 @@
+:root{
+  --green:#0B4D2B;
+  --gold:#D4AF37;
+  --white:#ffffff;
+  --bg:#f4f6f5;
+  --card:#ffffff;
+}
+*{box-sizing:border-box;font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;}
+body{margin:0;background:var(--bg);color:#222;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;}
+.container{width:100%;max-width:460px;}
+.header{display:flex;align-items:center;gap:12px;padding:12px 8px;}
+.logo{
+    width: 100px; /* Aumentado um pouco para a nova logo */
+    height: auto;
+    border-radius: 10px;
+    border: 3px solid var(--white);
+    background: var(--white);
+    padding: 6px;
+}
+.header-text .dept{color:var(--gold);font-weight:600;text-transform:uppercase;font-size:13px;}
+.app-name{margin:0;color:var(--green);font-size:28px;letter-spacing:1px;}
+.card{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.08);margin-bottom:14px;}
+label{display:block;margin-bottom:10px;font-size:14px;}
+input[type="text"], input[type="email"], select{width:100%;padding:10px;border-radius:8px;border:1px solid #ddd;font-size:14px;}
+.btn{display:inline-block;padding:10px 14px;border-radius:10px;border:0;background:var(--green);color:var(--white);font-weight:600;cursor:pointer;}
+.btn.alt{background:#eee;color:#333;border:1px solid #ccc;}
+.btn.primary{background:var(--gold);color:#062b17;}
+.hidden{display:none;}
+.footer{text-align:center;color:#666;font-size:13px;margin-top:8px;}
+.actions{display:flex;gap:8px;justify-content:flex-end;margin-top:8px;}
