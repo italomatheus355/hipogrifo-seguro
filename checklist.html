@@ -18,116 +18,109 @@
 <body>
   <main class="container">
     <header class="header">
-      <img src="logo_fundo_escuro.png" alt="Logo HU-41 Hipogrifo" class="logo"/>
+      <img src="nova_logo_engrenagem.png" alt="Logo HU-41 Hipogrifo" class="logo"/>
       <div class="header-text">
         <h1 class="app-name">Checklist</h1>
         <div class="dept">Fator Humano Pós-Manutenção</div>
       </div>
     </header>
 
-    <form id="checklist-form" class="card" action="https://formsubmit.co/ketrynne.fernandes@marinha.mil.br" method="POST" target="_blank">
-        <input type="hidden" name="_subject" value="Hipogrifo Seguro - Checklist Pós-Manutenção">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_next" value="thankyou.html">
-
-        <input type="hidden" name="Nome do Militar" id="form-nome" />
-        <input type="hidden" name="Graduação" id="form-graduacao" />
-        <input type="hidden" name="E-mail" id="form-email" />
-
+    <div id="checklist-area" class="card">
+        
         <div class="question-group">
             <p>1. Usei todos os métodos, recursos e práticas padrão estabelecidas para a manutenção da aeronave (manuais, pesquisas, normas e procedimentos padrão) para realizar o meu trabalho?</p>
             <div class="radio-option">
-                <input type="radio" id="p1_sim" name="1. Práticas Padrão" value="SIM" required><label for="p1_sim">SIM</label>
-                <input type="radio" id="p1_nao" name="1. Práticas Padrão" value="NÃO"><label for="p1_nao">NÃO</label>
+                <input type="radio" id="p1_sim" name="p1" value="SIM" required><label for="p1_sim">SIM</label>
+                <input type="radio" id="p1_nao" name="p1" value="NÃO"><label for="p1_nao">NÃO</label>
             </div>
         </div>
-
+        
         <div class="question-group">
             <p>2. Consegui realizar minhas tarefas no tempo planejado?</p>
             <div class="radio-option">
-                <input type="radio" id="p2_sim" name="2. Tempo Planejado" value="SIM" required><label for="p2_sim">SIM</label>
-                <input type="radio" id="p2_nao" name="2. Tempo Planejado" value="NÃO"><label for="p2_nao">NÃO</label>
+                <input type="radio" id="p2_sim" name="p2" value="SIM" required><label for="p2_sim">SIM</label>
+                <input type="radio" id="p2_nao" name="p2" value="NÃO"><label for="p2_nao">NÃO</label>
             </div>
         </div>
         
         <div class="question-group">
             <p>3. Percebo que realizei o meu trabalho com o melhor desempenho?</p>
             <div class="radio-option">
-                <input type="radio" id="p3_sim" name="3. Melhor Desempenho" value="SIM" required><label for="p3_sim">SIM</label>
-                <input type="radio" id="p3_nao" name="3. Melhor Desempenho" value="NÃO"><label for="p3_nao">NÃO</label>
+                <input type="radio" id="p3_sim" name="p3" value="SIM" required><label for="p3_sim">SIM</label>
+                <input type="radio" id="p3_nao" name="p3" value="NÃO"><label for="p3_nao">NÃO</label>
             </div>
         </div>
 
         <div class="question-group">
             <p>4. Estou me sentindo bem com o meu desempenho no trabalho?</p>
             <div class="radio-option">
-                <input type="radio" id="p4_sim" name="4. Sentimento sobre Desempenho" value="SIM" required><label for="p4_sim">SIM</label>
-                <input type="radio" id="p4_nao" name="4. Sentimento sobre Desempenho" value="NÃO"><label for="p4_nao">NÃO</label>
+                <input type="radio" id="p4_sim" name="p4" value="SIM" required><label for="p4_sim">SIM</label>
+                <input type="radio" id="p4_nao" name="p4" value="NÃO"><label for="p4_nao">NÃO</label>
             </div>
         </div>
 
         <div class="question-group">
             <p>5. Percebo que consegui realizar o meu trabalho com as minhas habilidades?</p>
             <div class="radio-option">
-                <input type="radio" id="p5_sim" name="5. Uso de Habilidades" value="SIM" required><label for="p5_sim">SIM</label>
-                <input type="radio" id="p5_nao" name="5. Uso de Habilidades" value="NÃO"><label for="p5_nao">NÃO</label>
+                <input type="radio" id="p5_sim" name="p5" value="SIM" required><label for="p5_sim">SIM</label>
+                <input type="radio" id="p5_nao" name="p5" value="NÃO"><label for="p5_nao">NÃO</label>
             </div>
         </div>
 
         <div class="question-group">
             <p>6. Sinto-me em boas condições ao final da realização do meu trabalho?</p>
             <div class="radio-option">
-                <input type="radio" id="p6_sim" name="6. Boas Condições Físicas" value="SIM" required><label for="p6_sim">SIM</label>
-                <input type="radio" id="p6_nao" name="6. Boas Condições Físicas" value="NÃO"><label for="p6_nao">NÃO</label>
+                <input type="radio" id="p6_sim" name="p6" value="SIM" required><label for="p6_sim">SIM</label>
+                <input type="radio" id="p6_nao" name="p6" value="NÃO"><label for="p6_nao">NÃO</label>
             </div>
         </div>
 
         <div class="question-group">
             <p>7. Realizei o meu trabalho com pressões negativas, estresse negativo e distrações?</p>
             <div class="radio-option">
-                <input type="radio" id="p7_sim" name="7. Pressões/Estresse" value="SIM" required><label for="p7_sim">SIM</label>
-                <input type="radio" id="p7_nao" name="7. Pressões/Estresse" value="NÃO"><label for="p7_nao">NÃO</label>
+                <input type="radio" id="p7_sim" name="p7" value="SIM" required><label for="p7_sim">SIM</label>
+                <input type="radio" id="p7_nao" name="p7" value="NÃO"><label for="p7_nao">NÃO</label>
             </div>
         </div>
 
         <div class="question-group">
             <p>8. Estou seguro sobre o resultado do meu trabalho?</p>
             <div class="radio-option">
-                <input type="radio" id="p8_sim" name="8. Segurança do Resultado" value="SIM" required><label for="p8_sim">SIM</label>
-                <input type="radio" id="p8_nao" name="8. Segurança do Resultado" value="NÃO"><label for="p8_nao">NÃO</label>
+                <input type="radio" id="p8_sim" name="p8" value="SIM" required><label for="p8_sim">SIM</label>
+                <input type="radio" id="p8_nao" name="p8" value="NÃO"><label for="p8_nao">NÃO</label>
             </div>
         </div>
 
         <div class="question-group">
             <p>9. Realizei checks após a conclusão do meu trabalho (como entrega de ferramentas e observação de materiais na estrutura ou interior da aeronave)?</p>
             <div class="radio-option">
-                <input type="radio" id="p9_sim" name="9. Checks Pós-Trabalho" value="SIM" required><label for="p9_sim">SIM</label>
-                <input type="radio" id="p9_nao" name="9. Checks Pós-Trabalho" value="NÃO"><label for="p9_nao">NÃO</label>
+                <input type="radio" id="p9_sim" name="p9" value="SIM" required><label for="p9_sim">SIM</label>
+                <input type="radio" id="p9_nao" name="p9" value="NÃO"><label for="p9_nao">NÃO</label>
             </div>
         </div>
 
         <div class="question-group">
             <p>10. O meu trabalho foi supervisionado?</p>
             <div class="radio-option">
-                <input type="radio" id="p10_sim" name="10. Supervisão" value="SIM" required><label for="p10_sim">SIM</label>
-                <input type="radio" id="p10_nao" name="10. Supervisão" value="NÃO"><label for="p10_nao">NÃO</label>
+                <input type="radio" id="p10_sim" name="p10" value="SIM" required><label for="p10_sim">SIM</label>
+                <input type="radio" id="p10_nao" name="p10" value="NÃO"><label for="p10_nao">NÃO</label>
             </div>
         </div>
         
         <div class="question-group">
-            <p>11. Finalizei minhas tarefas com a mesma performance inicial? (Para manter o índice 11 do seu requisito original)</p>
+            <p>11. Finalizei minhas tarefas com a mesma performance inicial? (Para manter o índice 11)</p>
             <div class="radio-option">
-                <input type="radio" id="p11_sim" name="11. Performance Inicial vs Final" value="SIM" required><label for="p11_sim">SIM</label>
-                <input type="radio" id="p11_nao" name="11. Performance Inicial vs Final" value="NÃO"><label for="p11_nao">NÃO</label>
+                <input type="radio" id="p11_sim" name="p11" value="SIM" required><label for="p11_sim">SIM</label>
+                <input type="radio" id="p11_nao" name="p11" value="NÃO"><label for="p11_nao">NÃO</label>
             </div>
         </div>
 
 
         <div class="actions">
           <a href="instrucoes.html" class="btn alt">Voltar às Instruções</a>
-          <button type="submit" class="btn primary">Enviar Checklist</button>
+          <button type="button" onclick="enviarChecklist()" class="btn primary">Enviar Checklist</button>
         </div>
-    </form>
+    </div>
 
     <footer class="footer">
       Centro de Processamento de Dados

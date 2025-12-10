@@ -1,5 +1,5 @@
 // service-worker.js - ATUALIZADO
-const CACHE_NAME = 'hipogrifo-v3'; // Alterado para forçar a atualização do cache
+const CACHE_NAME = 'hipogrifo-v4'; 
 const FILES_TO_CACHE = [
   '.',
   './index.html',
@@ -8,7 +8,7 @@ const FILES_TO_CACHE = [
   './thankyou.html',
   './app.css',
   './app.js',
-  './logo_fundo_escuro.png', // NOVA LOGO
+  './nova_logo_engrenagem.png', // NOVA LOGO
   './manifest.json'
 ];
 
