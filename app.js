@@ -1,7 +1,7 @@
 // app.js - Lógica COMPLETA FINAL e OTIMIZADA com Download de Arquivo TXT
 
 // --- Configurações Fixas ---
-const EMAIL_DESTINATARIO = 'ketrynne.fernandes@marinha.mil.br'; 
+const EMAIL_DESTINATARIO = 'italo.medeiros@marinha.mil.br'; 
 const NOME_DO_APLICATIVO = 'Hipogrifo Seguro';
 
 const PERGUNTAS = [
@@ -128,4 +128,5 @@ window.enviarChecklist = function() {
     setTimeout(() => {
         window.location.href = 'thankyou.html';
     }, 100); 
+
 };
