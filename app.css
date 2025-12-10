@@ -13,28 +13,29 @@
 body{margin:0;background:var(--bg);color:#222;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;}
 .container{width:100%;max-width:460px;}
 
-/* *** AJUSTES AQUI *** */
+/* *** AJUSTES AQUI PARA CENTRALIZAÇÃO *** */
 .header{
-    display: block; /* Muda para bloco para centralizar itens internos */
+    display: block; /* MUDA para bloco para centralizar itens internos */
     align-items: center;
-    text-align: center; /* Centraliza a logo e o texto */
+    text-align: center; /* CENTRALIZA a logo e o texto */
     padding: 18px 8px 12px;
 }
 .logo{
-    width: 110px; /* Aumentei um pouco o tamanho da logo */
+    width: 110px; 
     height: auto;
     border-radius: 10px;
     border: 3px solid var(--white);
     background: var(--white);
     padding: 6px;
     margin-bottom: 12px; /* Espaço entre a logo e o texto */
+    display: inline-block; /* Garante que a logo possa ser centralizada pelo text-align: center; do header */
 }
 
 /* Título Principal: Hipogrifo Seguro */
 .app-name{
     margin:0;
     color: var(--cor-titulo);
-    font-size: 30px; /* Um pouco maior */
+    font-size: 30px; 
     font-weight: 700;
     letter-spacing: 0.5px;
     line-height: 1.2;
