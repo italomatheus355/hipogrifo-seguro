@@ -1,7 +1,8 @@
-// app.js - Lógica COMPLETA FINAL com Mailto OTIMIZADO
+// app.js - Lógica COMPLETA FINAL com Mailto CORRIGIDO
 
 // --- Configurações Fixas ---
-const EMAIL_DESTINATARIO = 'italo.medeiros@marinha.mil.br'; // MUDE ESTE PARA SEU EMAIL DE TESTE
+// ** LEMBRE-SE DE TROCAR ESTE PARA SEU EMAIL DE TESTE **
+const EMAIL_DESTINATARIO = 'italo.medeiros@marinha.mil.br'; 
 const NOME_DO_APLICATIVO = 'Hipogrifo Seguro';
 
 const PERGUNTAS = [
