@@ -1,7 +1,7 @@
-// app.js - Lógica COMPLETA FINAL e OTIMIZADA com Download de Arquivo TXT
+// app.js - Lógica COMPLETA FINAL com Mailto OTIMIZADO
 
 // --- Configurações Fixas ---
-const EMAIL_DESTINATARIO = 'italo.medeiros@marinha.mil.br'; 
+const EMAIL_DESTINATARIO = 'italo.medeiros@marinha.mil.br'; // MUDE ESTE PARA SEU EMAIL DE TESTE
 const NOME_DO_APLICATIVO = 'Hipogrifo Seguro';
 
 const PERGUNTAS = [
@@ -54,21 +54,23 @@ document.addEventListener('DOMContentLoaded', function(){
       }
 });
 
-// --- 2. FUNÇÃO DE ENVIO/DOWNLOAD (Global, chamada pelo botão) ---
+// --- 2. FUNÇÃO DE ENVIO/MAILTO (Global, chamada pelo botão) ---
 window.enviarChecklist = function() {
     
     const checklistArea = document.getElementById('checklist-area');
 
     if (!checklistArea) {
-        // Se a área do checklist não for encontrada, algo está errado no HTML
         alert('Erro: Componente de checklist não encontrado.');
         return; 
     }
 
     let todasRespondidas = true;
-    let conteudoArquivo = "--- RELATÓRIO " + NOME_DO_APLICATIVO.toUpperCase() + " ---\n\n";
+    
+    // Usamos %0A para quebrar a linha e %20 para espaços no corpo do e-mail (URL Encoding)
+    let corpoEmail = "---%0A*HIPOGRIFO%20SEGURO%20-%20CHECKLIST%20PÓS-MANUTENÇÃO*%0A---%0A%0A";
 
-    // Coleta das Respostas e Verificação
+    // 1. Coleta das Respostas e Verificação
+
     const respostas = [];
     for (let i = 1; i <= PERGUNTAS.length; i++) {
         const selector = `input[name="p${i}"]:checked`;
@@ -86,47 +88,41 @@ window.enviarChecklist = function() {
     }
 
     if (!todasRespondidas) {
-        alert('Por favor, responda a todas as 11 perguntas do checklist antes de finalizar.');
+        alert('Por favor, responda a todas as 11 perguntas do checklist antes de enviar.');
         return;
     }
 
-    // Montagem do Conteúdo Final do Arquivo TXT
+    // 2. Montagem do Conteúdo do E-mail (com quebra de linha URL encoded)
     
-    // a) Identificação (Lê diretamente do localStorage)
-    conteudoArquivo += "DADOS DO MILITAR:\n";
-    conteudoArquivo += `Nome: ${localStorage.getItem('sis_nome') || 'Não fornecido'}\n`;
-    conteudoArquivo += `Graduação: ${localStorage.getItem('sis_grad') || 'Não fornecido'}\n`;
-    conteudoArquivo += `E-mail: ${localStorage.getItem('sis_email') || 'Não fornecido'}\n`;
-    conteudoArquivo += `Data/Hora do Preenchimento: ${new Date().toLocaleString('pt-BR')}\n\n`;
+    // a) Identificação
+    corpoEmail += "*DADOS%20DO%20MILITAR*: %0A";
+    corpoEmail += `Nome:%20${encodeURIComponent(localStorage.getItem('sis_nome') || 'Não fornecido')}%0A`;
+    corpoEmail += `Graduação:%20${encodeURIComponent(localStorage.getItem('sis_grad') || 'Não fornecido')}%0A`;
+    corpoEmail += `E-mail:%20${encodeURIComponent(localStorage.getItem('sis_email') || 'Não fornecido')}%0A`;
+    corpoEmail += `Data/Hora%20do%20Preenchimento:%20${encodeURIComponent(new Date().toLocaleString('pt-BR'))}%0A%0A`;
     
     // b) Checklist
-    conteudoArquivo += "RESPOSTAS DO CHECKLIST:\n";
+    corpoEmail += "*RESPOSTAS%20DO%20CHECKLIST*:%0A";
     respostas.forEach((item) => {
-        conteudoArquivo += `${item.pergunta} -> ${item.resposta}\n`;
+        corpoEmail += `${encodeURIComponent(item.pergunta)}%20->%20**${item.resposta}**%0A`;
     });
     
-    conteudoArquivo += "\n--------------------------------------------------------------";
+    corpoEmail += "%0A---";
 
-    // 3. Geração e Disparo do Download do Arquivo .txt
+    // 3. Criação e Execução do Link mailto
     
-    const nomeMilitar = localStorage.getItem('sis_nome') || 'Militar';
-    const nomeArquivo = `CHECKLIST_${nomeMilitar.toUpperCase().replace(/\s/g, '_')}_${new Date().getFullYear()}.txt`;
+    const subject = encodeURIComponent(`${NOME_DO_APLICATIVO} - Checklist Pós-Manutenção - ${localStorage.getItem('sis_grad') || ''}`);
     
-    const blob = new Blob([conteudoArquivo], { type: 'text/plain;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = nomeArquivo;
+    const mailtoLink = `mailto:${EMAIL_DESTINATARIO}?subject=${subject}&body=${corpoEmail}`;
+
+    // Abre o cliente de e-mail do usuário
+    window.location.href = mailtoLink;
     
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    
-    // 4. Feedback e Redirecionamento
-    alert(`Download concluído! Por favor, anexe o arquivo "${nomeArquivo}" em um novo e-mail para ${EMAIL_DESTINATARIO}.`);
+    // 4. Feedback e Redirecionamento (Simulação do Thank You)
+    alert('Checklist concluído! Seu cliente de e-mail será aberto. Por favor, clique em ENVIAR no seu programa de e-mail.');
     
     setTimeout(() => {
+        // Redireciona para o agradecimento
         window.location.href = 'thankyou.html';
     }, 100); 
-
 };
